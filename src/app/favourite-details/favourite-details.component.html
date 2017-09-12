@@ -1,0 +1,37 @@
+
+<div id="favcontainer"class="container" >
+    <div class="row" >
+     
+     <div  class="col-sm-6 col-md-6 col-lg-6 mt-4" *ngFor="let news of newsarticle ">
+       <div id="display" class="card">
+         
+         <a href="{{news.url}}" target="blank">
+            <img class="card-img-top" src={{news.urlToImage}} height=""></a>
+         <div class="card-block">
+             <figure class="profile">
+                 <img src={{news.urlToImage}} class="profile-avatar" alt="">
+             </figure>
+             <h4 class="card-title mt-3">{{news.title}}</h4>
+             <div class="meta card-text">
+                 <a>By:{{news.author}} </a>
+             </div>
+             <div class="card-text">
+             <p class="lead">{{news.description.slice(0,100)}} </p>
+                   <a href="{{news.url}}"> Link to {{news.name}} website  </a> 
+             </div>
+         </div>
+         <div class="card-footer">
+             <small>Published At: {{news.publishedAt}}</small>
+             <button class="btn btn-info float-right btn-sm" (click)="deleteFavourite(news.articleId)" href="#"> Delete </button>
+             <!-- <button class="btn btn-info float-right btn-sm" (click)="updateFavourite(news.title)" href="#"> Comment</button> -->
+             <div class="input-group ">
+                <input #comment type="text" class="form-control" placeholder="Add Feedback...">
+                <span class="input-group-btn">
+                  <button class="btn btn-info " type="button" (click)="updateFavourite(comment.value , news)">Comment</button>
+                </span>
+            </div>      
+         </div>
+       </div>       
+     </div>  
+ </div>
+</div>

@@ -1,0 +1,20 @@
+
+  <a href="{{news1.url}}" target="blank">
+     <img class="card-img-top" src={{news1.urlToImage}} height=""></a>
+  <div class="card-block">
+      <figure class="profile">
+          <img src={{news1.urlToImage}} class="profile-avatar" alt="">
+      </figure>
+      <h4 class="card-title mt-3">{{news1.title}}</h4>
+      <div class="meta card-text">
+          <a>By:{{news1.author}}</a>
+      </div>
+      <div class="card-text">
+        <p class="lead">{{news1.description.slice(0,100)}} </p>
+        <a href="{{news1.url}}"> Link to {{news1.name}} website  </a>
+      </div>
+  </div>
+  <div class="card-footer">
+      <small>Updated At: {{news1.publishedAt}}</small>
+      <button class="btn btn-info float-right btn-sm" (click)="addFavourite(news1)"> Add Favrouites</button>
+  </div>
